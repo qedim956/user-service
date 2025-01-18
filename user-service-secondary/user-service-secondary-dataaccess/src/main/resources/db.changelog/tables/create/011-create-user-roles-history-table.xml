@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.15.xsd">
+    
+    <changeSet id="011_create_user_roles_history_table" author="ValidaHuseynli">
+        <createTable tableName="user_roles_history">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="uuid"/>
+
+            <column name="users_roles_id" type="uuid"/>
+
+            <column name="assigned_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+
+
+        </createTable>
+    </changeSet>
+    <changeSet id="add_default_value_user_roles_history_table" author="ValidaHuseynli">
+        <addDefaultValue
+                tableName="user_roles_history"
+                columnName="assigned_at"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+
+        <addForeignKeyConstraint baseTableName="user_roles_history"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk_user_roles_history_users"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="user_roles_history"
+                                 baseColumnNames="users_roles_id"
+                                 constraintName="fk_user_roles_history_user_roles"
+                                 referencedTableName="users_roles"
+                                 referencedColumnNames="id"/>
+
+        <addDefaultValue
+                tableName="user_roles_history"
+                columnName="created_at"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+
+        <addDefaultValue
+                tableName="user_roles_history"
+                columnName="updated_at"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+
+        <addDefaultValue
+                tableName="user_roles_history"
+                columnName="is_active"
+                defaultValueBoolean="true"/>
+
+    </changeSet>
+    
+</databaseChangeLog>

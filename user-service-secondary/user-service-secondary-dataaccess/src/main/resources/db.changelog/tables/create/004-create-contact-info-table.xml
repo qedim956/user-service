@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.15.xsd">
+
+    <changeSet id="004_create_contact_info_table" author="ValidaHuseynli">
+        <createTable tableName="contact_info">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="contact_key" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_value" type="varchar(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+    <changeSet id="add_default_value_contact_info_table" author="ValidaHuseynli">
+        <addDefaultValue
+                tableName="contact_info"
+                columnName="created_at"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+
+        <addDefaultValue
+                tableName="contact_info"
+                columnName="updated_at"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+
+        <addDefaultValue
+                tableName="contact_info"
+                columnName="is_active"
+                defaultValueBoolean="true"/>
+    </changeSet>
+
+
+
+</databaseChangeLog>

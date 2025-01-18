@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.15.xsd">
+
+    <changeSet id="002_create_user_table" author="ValidaHuseynli">
+        <createTable tableName="users">
+
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="username" type="varchar(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_name" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="gender" type="varchar(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birth_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_locked" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_default_value_for_users_table" author="ValidaHuseynli">
+        <addDefaultValue
+                tableName="users"
+                columnName="created_at"
+                defaultValueComputed="CURRENT_TIMESTAMP" />
+
+        <addDefaultValue
+                tableName="users"
+                columnName="updated_at"
+                defaultValueComputed="CURRENT_TIMESTAMP" />
+
+        <addDefaultValue
+                tableName="users"
+                columnName="is_active"
+                defaultValueBoolean="true" />
+        <addDefaultValue
+                tableName="users"
+                columnName="is_locked"
+                defaultValueBoolean="false" />
+    </changeSet>
+
+
+</databaseChangeLog>

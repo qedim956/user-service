@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <include file="create/001-create-roles-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/002-create-user-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/003-create-users-roles-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/004-create-contact-info-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/005-create-users-contacts-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/006-create-address-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/007-create-users-address-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/008-create-permissions-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/009-create-role-permission-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/010-create-authentication-token-table.xml"  relativeToChangelogFile="true"/>
+    <include file="create/011-create-user-roles-history-table.xml"  relativeToChangelogFile="true"/>
+
+
+
+</databaseChangeLog>

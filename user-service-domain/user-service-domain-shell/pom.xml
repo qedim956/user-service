@@ -10,4 +10,20 @@
     </parent>
 
     <artifactId>user-service-domain-shell</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.company</groupId>
+            <artifactId>user-service-domain-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.company</groupId>
+            <artifactId>library</artifactId>
+        </dependency>
+    </dependencies>
 </project>

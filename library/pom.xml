@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.company</groupId>
-        <artifactId>user-service-domain</artifactId>
+        <artifactId>user-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>user-service-domain-core</artifactId>
+    <artifactId>library</artifactId>
+
 
     <dependencies>
         <dependency>
@@ -19,11 +20,8 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.company</groupId>
-            <artifactId>library</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring.data.version}</version>
         </dependency>
     </dependencies>
 

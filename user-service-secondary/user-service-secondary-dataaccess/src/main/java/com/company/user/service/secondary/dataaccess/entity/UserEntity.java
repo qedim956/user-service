@@ -1,6 +1,6 @@
 package com.company.user.service.secondary.dataaccess.entity;
 
-import com.company.user.service.domain.core.valueobjects.Gender;
+import com.company.library.valueobjects.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,6 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @SuperBuilder
 @Getter

@@ -34,6 +34,10 @@
             <groupId>com.company</groupId>
             <artifactId>user-service-domain-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.company</groupId>
+            <artifactId>library</artifactId>
+        </dependency>
     </dependencies>
 
 

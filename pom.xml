@@ -18,6 +18,7 @@
 		<module>user-service-domain</module>
 		<module>user-service-primary</module>
 		<module>user-service-secondary</module>
+		<module>library</module>
 	</modules>
 
 	<properties>
@@ -27,6 +28,8 @@
 		<spring.data.version>3.4.1</spring.data.version>
 		<postgre.version>42.7.4</postgre.version>
 		<liquibase.version>4.21.1</liquibase.version>
+		<spring.web.starter.version>3.4.1</spring.web.starter.version>
+		<spring.boot.version>3.4.1</spring.boot.version>
 	</properties>
 
 
@@ -54,6 +57,11 @@
 				<version>${version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.company</groupId>
+				<artifactId>library</artifactId>
+				<version>${version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
@@ -73,6 +81,17 @@
 				<artifactId>liquibase-core</artifactId>
 				<version>${liquibase.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring.web.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

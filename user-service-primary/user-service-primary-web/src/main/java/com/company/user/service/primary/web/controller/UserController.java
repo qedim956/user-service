@@ -1,7 +1,7 @@
 package com.company.user.service.primary.web.controller;
 
-import com.company.library.web.request.UserInsertCommandRequestModel;
-import com.company.library.web.response.UserInsertResponseModel;
+import com.company.user.service.library.web.request.UserInsertCommandRequestModel;
+import com.company.user.service.library.web.response.UserInsertResponseModel;
 import com.company.user.service.domain.shell.port.input.abstracts.AbstractUserDomainShellService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

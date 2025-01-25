@@ -1,6 +1,6 @@
 package com.company.user.service.secondary.dataaccess.entity;
 
-import com.company.library.valueobjects.Gender;
+import com.company.user.service.library.valueobjects.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

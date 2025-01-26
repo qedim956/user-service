@@ -5,11 +5,10 @@ import com.company.user.service.library.web.response.UserInsertResponseModel;
 import com.company.user.service.domain.shell.port.input.abstracts.AbstractUserDomainShellService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
     private final AbstractUserDomainShellService userDomainShellService;
@@ -18,6 +17,12 @@ public class UserController {
     public ResponseEntity<UserInsertResponseModel> insert(@RequestBody
                                                           UserInsertCommandRequestModel model){
         return ResponseEntity.ok(userDomainShellService.insert(model));
+
+    }
+
+    @GetMapping
+    public ResponseEntity<UserInsertResponseModel> get(){
+        return null;
 
     }
 }

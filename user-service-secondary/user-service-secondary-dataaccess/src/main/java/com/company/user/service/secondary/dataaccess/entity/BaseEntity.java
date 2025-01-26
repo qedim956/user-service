@@ -1,9 +1,6 @@
 package com.company.user.service.secondary.dataaccess.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +17,6 @@ import java.util.UUID;
 @MappedSuperclass
 public abstract class BaseEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
+  @Column(nullable = false, updatable = false)
   private UUID id;
 }

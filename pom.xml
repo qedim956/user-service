@@ -30,6 +30,7 @@
         <liquibase.version>4.21.1</liquibase.version>
         <spring.web.starter.version>3.4.1</spring.web.starter.version>
         <spring.boot.version>3.4.1</spring.boot.version>
+        <spring.open.api.version>2.5.0</spring.open.api.version>
     </properties>
 
 
@@ -90,7 +91,11 @@
                 <artifactId>spring-boot</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${spring.open.api.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
